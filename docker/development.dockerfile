@@ -18,8 +18,8 @@ RUN apt-get update && \
 # NPM global installs:
 #  - Yarn is the default package manager for the node component of a lucky
 #    browser app.
-#  - Mix is the default asset compiler.
-RUN npm install -g yarn mix
+#  - Vite is the asset compiler.
+RUN npm install -g yarn vite
 
 # Installs overmind, not needed if nox is the process manager.
 RUN wget https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz && \
@@ -37,4 +37,3 @@ RUN git clone https://github.com/luckyframework/lucky_cli . && \
 WORKDIR /app
 ENV DATABASE_URL=postgres://postgres:postgres@host.docker.internal:5432/postgres
 EXPOSE 5001
-

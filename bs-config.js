@@ -15,7 +15,9 @@ module.exports = {
       }
     }
   },
-  files: ["public/css/**/*.css", "public/js/**/*.js"],
+  files: [
+    "./public/**"
+  ],
   watchEvents: ["change"],
   open: false,
   browser: "default",

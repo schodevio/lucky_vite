@@ -1,7 +1,7 @@
 require "./shards"
 
-# Load the asset manifest
-Lucky::AssetHelpers.load_manifest "public/mix-manifest.json"
+# Load the asset manifest (from Vite bundler)
+Lucky::AssetHelpers.load_manifest("public/manifest.json", use_vite: true)
 
 require "../config/server"
 require "./app_database"

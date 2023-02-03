@@ -100,7 +100,7 @@ jobs:
         if: steps.node-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --no-progress
       - name: Compiling assets
-        run: yarn prod
+        run: yarn build
       - name: Build lucky_tasks
         if: steps.crystal-cache.outputs.cache-hit != 'true'
         run: crystal build tasks.cr -o ./lucky_tasks
@@ -112,4 +112,4 @@ jobs:
           ./lucky_tasks db.seed.required_data
 
       - name: Run tests
-        run: crystal spec 
+        run: crystal spec
